@@ -1,10 +1,10 @@
-var footballers =[{
+const footballers =[{
     name: 'Jonas',
     surname: 'Jonaitis',
     speed: 25,
     inches: 1.8,
     age: 22,
-    introduction: function() {
+    introduction: () => {
         return "Futbolistas " + this.name + " " + this.surname + " " + this.speed;
       }
     
@@ -15,62 +15,78 @@ var footballers =[{
     speed: 26,
     inches: 1.75,
     age: 20,
-    introduction: function() {
+    introduction: () => {
         return "Futbolistas " + this.name + " " + this.surname + " " + this.speed;
       }
     }, 
     {
     name: 'Vidas',
     surname: 'Vidutis',
-    speed: 24,
+    speed: 28,
     inches: 1.7,
     age: 24,
-    introduction: function() {
+    introduction: () => {
         return "Futbolistas " + this.name + " " + this.surname + " " + this.speed + " km/h";
       }
 }]
 
-
+footballers.sort((a, b) => {
+  return b.speed - a.speed;
+});
 
 footballers.forEach(function(element, index) {
     index + 1;
 
     var divas = document.createElement('div');
-    // document.getElementById("demo").innerHTML = element.name + ' ' + element.surname; 
     divas.innerHTML = 'Futbolininkas ' + element.name + ' ' + element.surname + ' ' + element.speed + ' km/h;';
     document.body.appendChild(divas);
+
     
 });
 
-// console.log(Math.max(...footballers));
-// document.getElementById("demo").innerHTML = footballers.introduction(); 
-// divas.innerHTML = footballers.introduction();
 
-// console.log(footballers.introduction());
-// console.log(footballer2.introduction());
-// console.log(footballer3.introduction());
-// console.log(footballers);
+class Car {
+  constructor(name, distance, speed){
+        this.name = name,
+        this.distance = distance,
+        this.speed = speed 
+  }     
+}
 
+firstCar = new Car("Volvo", 10000, "60 km/h");
 
-// function Cars(name, time, distance) {
-//         this.name = name,
-//         this.distance = distance,
-//         this.time = time
-    
-      
-//     };
+// console.log(firstCar);
 
-// var a = 1000;
-// var b = 3600;
+var blokas = document.createElement('div');
+blokas.innerHTML = "Mašina - " + firstCar.name + ', nuvažiuotas kelias - ' + firstCar.distance + 'km.,  greitis - ' + firstCar.speed;
+blokas.style.marginTop = '15px';
+document.body.appendChild(blokas);
 
-// console.log ( "Automobilis: " + cars[0].name );
-// console.log ( "Valstybinis numeris: " + cars[0].id );
-// console.log ( "Nuvažiuotas atstumas: " + cars[0].distance + "m" );
-// console.log ( "Laikas: " + cars[0].time + "s" );
-// console.log ( "Vidutinis mašinos greitis (km/h) : " + (cars[0].distance/a) / (cars[0].time/b) );
+let button = document.createElement('button');
+button.innerHTML = 'SUKURTI';
+button.setAttribute('id', 'sukurti');
+document.body.appendChild(button);
+button.style.margin = '15px auto';
+button.style.background = 'lightgreen';
+button.style.border = '1px solid lightgreen';
+button.style.cursor = 'pointer';
 
-// console.log ( "Automobilis: " + cars[1].name );
-// console.log ( "Valstybinis numeris: " + cars[1].id )
-// console.log ( "Nuvažiuotas atstumas: " + cars[1].distance + "m" );
-// console.log ( "Laikas: " + cars[1].time + "s" );
-// console.log ( "Vidutinis mašinos greitis (km/h) : " + (cars[1].distance/a) / (cars[1].time/b) );
+button.addEventListener('click', function() {
+  secondCar = new Car("Mazda", 500, "50 km/h");
+  thirdCar = new Car("Opel", 100, "55 km/h");
+  fourthCar = new Car("Reno", 150, "80 km/h");
+  fifthCar = new Car("Audi", 500, "70km/h");
+  // console.log(fifthCar);
+  var blokas2 = document.createElement('div');
+  var blokas3 = document.createElement('div');
+  var blokas4 = document.createElement('div');
+  var blokas5 = document.createElement('div');
+  blokas2.innerHTML = "Mašina - " + secondCar.name + ', nuvažiuotas kelias - ' + secondCar.distance + 'km.,  greitis - ' + secondCar.speed;
+  blokas3.innerHTML = "Mašina - " + thirdCar.name + ', nuvažiuotas kelias - ' + thirdCar.distance + 'km.,  greitis - ' + thirdCar.speed;
+  blokas4.innerHTML = "Mašina - " + fourthCar.name + ', nuvažiuotas kelias - ' + fourthCar.distance + 'km.,  greitis - ' + fourthCar.speed;
+  blokas5.innerHTML = "Mašina - " +  fifthCar.name + ', nuvažiuotas kelias - ' +  fifthCar.distance + 'km.,  greitis - ' +  fifthCar.speed;
+  document.body.appendChild(blokas2);
+  document.body.appendChild(blokas3);
+  document.body.appendChild(blokas4);
+  document.body.appendChild(blokas5);
+});
