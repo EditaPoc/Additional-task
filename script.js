@@ -31,8 +31,14 @@ const footballers =[{
 }]
 
 footballers.sort((a, b) => {
+ 
   return b.speed - a.speed;
 });
+console.log(footballers[0]);
+var divas3 = document.createElement('div');
+divas3.innerHTML = 'Greičiausiai bėgantis futbolininkas ' + footballers[0].name + footballers[0].surname + ' ' + footballers[0].speed + ' km/h.';
+document.body.appendChild(divas3);
+divas3.style.marginBottom = '20px';
 
 footballers.forEach(function(element, index) {
     index + 1;
